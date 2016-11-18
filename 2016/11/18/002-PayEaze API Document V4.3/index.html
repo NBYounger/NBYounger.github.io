@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      PayEase Interface Specification | Younger&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Younger Chen">
+    
+    
+
+    <meta name="description" content="Cross-border business interface
+Version: 4.3
+
+[TOC]
+introductionOverviewThis interface document describes the general interface of Cross-Border Transactions, which can provide a comprehensive underst">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PayEase Interface Specification | Younger's Blog">
+<meta property="og:url" content="http://yoursite.com/2016/11/18/002-PayEaze API Document V4.3/index.html">
+<meta property="og:site_name" content="Younger's Blog">
+<meta property="og:description" content="Cross-border business interface
+Version: 4.3
+
+[TOC]
+introductionOverviewThis interface document describes the general interface of Cross-Border Transactions, which can provide a comprehensive underst">
+<meta property="og:updated_time" content="2016-11-18T06:34:03.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PayEase Interface Specification | Younger's Blog">
+<meta name="twitter:description" content="Cross-border business interface
+Version: 4.3
+
+[TOC]
+introductionOverviewThis interface document describes the general interface of Cross-Border Transactions, which can provide a comprehensive underst">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Younger&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          Be Better.
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/someus" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">PayEase Interface Specification</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-18" class="post-meta__date date">2016-11-18</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/API/">API</a>, <a class="tags-link" href="/tags/English/">English</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <blockquote>
+<p>Cross-border business interface</p>
+<p>Version: 4.3</p>
+</blockquote>
+<p>[TOC]</p>
+<h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>This interface document describes the general interface of Cross-Border Transactions, which can provide a comprehensive understanding of the system so that the technical personnel can master the interface of the system as soon as possible and can develop on the basis of this interface.</p>
+<h3 id="For-Whom"><a href="#For-Whom" class="headerlink" title="For Whom?"></a>For Whom?</h3><p>…</p>
+<h3 id="Technical-Support"><a href="#Technical-Support" class="headerlink" title="Technical Support"></a>Technical Support</h3><p>…</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>PayEase online payment mainly includes the merchant transaction order submission process and the bank order confirmation process.</p>
+<p>The merchant transaction order submission process: </p>
+<p>when the merchant server forms the final order and the consumer selects the PayEase mode and the consumer selects the PayEase In the platform to select the bank for online payment transactions, the interface program will directs the payment information in the consumer order to the PayEase platform. </p>
+<p>Bank order confirmation process: </p>
+<p>When the transaction is completed, PayEase platform can notify the merchant bank in two ways to confirm the messageof the order, the merchant needs to prepare the corresponding program to receive the relevant payment confirmation message returned by the bank according to the actual business needs of two options below (either or all) , and to carry out subsequent business operations by judging the message.</p>
+<ol>
+<li><p>Foreground page link: The result (parameters) of the transaction of the payment order is to connect to the form of pages sent to the merchant . The foreground here means that this message passing process is visible to cardholder consumers.</p>
+<p>This approach is characterized by: return to the real-time parameters. but there are several individual payment channel do not support this approach, such as network interruption or cardholder does not operate as required by the merchant. this approach may let merchant missing a order (means that merchant can not receive a bank payment confirmation message). Once it happens, the merchant can only receive them through the background interface program, or log on to The PayEase Merchant Management System for confirmation.</p>
+<p>Note: In this way, the url of the receiving program is specified by the value of the parameter <code>v_url</code> when the merchant submits the order without prior notice to the PayEase platform. If there is any change, the value of v_url can be modified before the order message is submitted.</p>
+</li>
+<li><p>Backgrount interface program: The PayEase platform forwards confirmation messages to the merchant. The way, PayEase platform server communicates with the merchant server is invisible to the cardholder.</p>
+<p>This approach is characterized by: support all payment channel on the platform, and in the process of communication with the merchant if the network failure, this approach supports automatic retransmission in the first 24 hours.</p>
+<p>Note: In this way, the url of the receiving program needs to be determined by the merchant. When the merchant ID is activation, This imformation is filled in the “Order Confirmation Return Address” column of the initial form, and the PayEase platform administrator will follow the initial form content to activate the ID. If the changes are made after the activating, the administrator must be notified to confirm the changes.</p>
+</li>
+</ol>
+<p>PayEase will immediately notify the merchant with transfer results when transfer is successful. The url of this interface is confirmed by the merchant and is entered in the “Transfer Confirmation Notification Interface” column of the initial form. After the activating of the merchant ID, if necessary, prior notice to the administrator to confirm changes.</p>
+<p>Note: Notification to the merchant transfer process and online payment transactions are two relatively independent process, transfer work is done by the PayEase settlement center staff line, after informing the bank to transfer work, through the “PayEase notify the merchant transfer results interface” Send all the order IDs of this transfer to the merchant. Because the interface to send the information is only played a notice role, does not affect the business of the actual transfer work, so businesses can choose according to their actual needs to use this interface.</p>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><h3 id="1-The-merchant-submits-the-pending-order-interface"><a href="#1-The-merchant-submits-the-pending-order-interface" class="headerlink" title="1. The merchant submits the pending order interface"></a>1. The merchant submits the pending order interface</h3><h4 id="1-Requst-URL"><a href="#1-Requst-URL" class="headerlink" title="1) Requst URL"></a>1) Requst URL</h4><blockquote>
+<p><a href="https://pay.yizhifubj.com/customer/gb/pay_bank.jsp" target="_blank" rel="external">https://pay.yizhifubj.com/customer/gb/pay_bank.jsp</a></p>
+</blockquote>
+<h4 id="2-Requst-Method："><a href="#2-Requst-Method：" class="headerlink" title="2) Requst Method："></a>2) Requst Method：</h4><blockquote>
+<p>HTTP post  </p>
+</blockquote>
+<h4 id="3-Interface-description："><a href="#3-Interface-description：" class="headerlink" title="3) Interface description："></a>3) Interface description：</h4><ul>
+<li>Merchant to PayEase</li>
+<li>Used to receive order data sended by merchant.</li>
+</ul>
+<h4 id="4-Request-Param"><a href="#4-Request-Param" class="headerlink" title="4) Request Param:"></a>4) Request Param:</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter Name</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Data Type</th>
+<th style="text-align:center">Nullable?</th>
+<th style="text-align:left">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">v_mid</td>
+<td style="text-align:center">Merchant ID</td>
+<td style="text-align:center">Integer(9)</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">Enter the merchant ID on the initial sheet</td>
+</tr>
+<tr>
+<td style="text-align:left">v_oid</td>
+<td style="text-align:center">Order ID</td>
+<td style="text-align:center">String(64)</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">The parameter format : <figure class="highlight plain"><figcaption><span>generated date (yyyymmdd) - Merchant ID - Merchant serial number```.  (eg:20161116-888-123456). The serial number of merchant is a number that is not repeatable every day and can not include any characters except the digits, letters, and "-". |</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">| v_rcvname       |            Receiver name            |  String(120)   |     N     | Considering the encoding of system may be different, It is recommended that the unified use of the value of the merchant ID instead. |</div><div class="line">| v_rcvaddr       |          Receiver address           |  String(128)   |     N     | It is recommended that the unified use of the value of the merchant ID instead. |</div><div class="line">| v_rcvtel       |         Receiver telephone          |   String(32)   |     N     | Enter customer&apos;s contact telephone number. If the merchant does not collect this parameter, please pass 00000000. |</div><div class="line">| v_rcvpost       |        Receiver Postal code         |   String(10)   |     N     | It is recommended that the unified use of the value of the merchant ID instead. |</div><div class="line">| v_amount        |     The total amount of orders      |  Decimal(16)   |     N     | After the decimal point to retain two. eg: 123.45 |</div><div class="line">| v_ymd           |  The date the order was generated   |   String(8)    |     N     | The format is &apos;&apos;yyyymmdd&apos;&apos;.              |</div><div class="line">| v_orderstatus   | Status of preparing the   commodity |   String(1)    |     N     | 0 ----&gt; Ready \| 1----&gt;Not yet ready.  This parameter has no practical meaning to the general merchant, it is proposed that the unified disposition is 1. |</div><div class="line">| v_ordername     |            Name of order            |   String(64)   |     N     | It is recommended that the unified use of the value of the merchant ID instead. |</div><div class="line">| [v_moneytype]() |        Payment currency type        |   Integer(2)   |     N     | See the Other Details in the end of document. |</div><div class="line">| v_url           |   url of recieving payment result   |  String(200)   |     N     | The merchant page returned by the customer after the purchase is completed. This address is the return address of the page connection method. The receiving program is used to receive the payment confirmation message sent by the bank. |</div><div class="line">| [v_md5info]()   |      Order Digital Fingerprint      |   String(32)   |     N     | See the Other Details in the end of document. |</div><div class="line">| v_producttype   |            Product type             |       -        |     N     | A description of the product type. The total length of no more than 40 characters. Must use UTF-8 characters in URL encoding format. |</div><div class="line">| [v_idtype]()    |         Type of certificate         |       -        |     N     | See the Other Details in the end of document. |</div><div class="line">| v_idnumber      |         Certificate number          |       -        |     N     | Customer&apos;s certificate number. The total length of no more than 20 characters. Must use UTF-8 characters in URL encoding format. If the merchant does not collect this parameter, please pass 000000000000000. |</div><div class="line">| v_idname        |           Customer&apos;s name           |       -        |     N     | If the merchant does not collect this parameter, please pass none. |</div><div class="line">| v_idcountry     |         Customer&apos;s country          |       -        |     N     | Optional parameters, Is customer&apos;s nationality. Using a three-digit code, and you can find them in the end of this document. If the merchant does not collect this parameter, please pass 000. |</div><div class="line">| v_idaddress     |         Customer&apos;s address          |       -        |     N     | Optional parameters. Is customer&apos;s contact address, the total length of no more than 200 characters. Must use UTF-8 characters in URL encoding format. If the merchant does not collect this parameter, please pass none. |</div><div class="line">| v_userref       |     Customer unique identifier      |       -        |     N     | This is customer&apos;s unique identifier on the merchant end, with a total length of no more than 40 characters. Must use UTF-8 characters in URL encoding format. |</div><div class="line"></div><div class="line">#### 5)Description for MD5</div><div class="line"></div><div class="line">As a result of the use of HTML form of transmission parameters, so there is the consumer can arbitrarily tamper with the page information. To prevent this kind of phenomenon from occurring, we need to sign part of the sensitive information to ensure its authenticity and integrity. The payment platform provides the merchant with a standard signature program source code, the program provides a signature function, the main function is``` char * hmac (char * text, char * key)```, the function has two entry parameters: ```char * text ``` and ```char * Key```. The &apos;text&apos; is made up of sensitive information on HTML form. When the consumer in the client side to generate the final order. The values of the seven parameters are spelled into a non-space-separated string in the order as ```v_moneytypev_ymdv_amountv_rcvnamev_oidv_midv_url```. and another entry parameter &apos;key&apos; is the key agreement between the PayEase platform and the merchant. The key is generated by the merchant and is suggested as a combination of 16 alphanumeric characters. And notify the relevant personnel of  PayEase. Please send the email to kf@payeasenet.com in the order of company name, merchant number, contact, and key. The initial value of this key is ```test```. (To ensure the security of the merchant transaction data, Please replace the key before the system goes online). The following keys are used for this key. For example, the result of the following example should be:</div></pre></td></tr></table></figure></td>
+</tr>
+</tbody>
+</table>
+<p>02010010113.4588820100101-888-000001234888<a href="http://domain/program" target="_blank" rel="external">http://domain/program</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">This is the string of fingerprints we need to write into v_md5info field.</div><div class="line"></div><div class="line">#### 6) Example</div><div class="line"></div><div class="line">```html</div><div class="line">&lt;form name=form method=post action=&quot;https://pay.yizhifubj.com/customer/gb/pay_bank.jsp&quot;&gt;</div><div class="line">  &lt;input type=hidden name=v_midvalue=&quot;888&quot;&gt;Merchant ID</div><div class="line">  &lt;input type=hiddenname=v_oid value=&quot;19990720-888-000001234&quot;&gt; Order ID</div><div class="line">  &lt;input type=hidden name=v_rcvname value=&quot;888&quot;&gt; Receiver name</div><div class="line">  &lt;input type=hidden name=v_rcvaddr value=&quot;dubai &quot;&gt; Receiver address</div><div class="line">  &lt;input type=hidden name=v_rcvtel value=&quot;00000000&quot;&gt; Receiver telephone</div><div class="line">  &lt;input type=hidden name=v_rcvpost value=&quot;100036&quot;&gt; Receiver Postal code</div><div class="line">  &lt;input type=hidden name=v_amount value=&quot;13.45&quot;&gt; The total amount of orders</div><div class="line">  &lt;input type=hidden name=v_ymd value=&quot;19990720&quot;&gt; The order generated date</div><div class="line">  &lt;input type=hidden name=v_orderstatus value=&quot;0&quot;&gt;status of commodity</div><div class="line">  &lt;input type=hidden name=v_ordername value=&quot;Umair &quot;&gt; Name of order</div><div class="line">  &lt;input type=hidden name=v_moneytype value=&quot;0&quot;&gt;</div><div class="line">  &lt;input type=hidden name=v_url value=&quot;http://domain/program&quot;&gt;</div><div class="line">  &lt;input type=hidden name=v_producttype value=&quot;game&quot;&gt; Product type</div><div class="line">  &lt;input type=hidden name=v_idtype value=&quot;00&quot;&gt;Type of certific</div><div class="line">  &lt;input type=hidden name=v_idnumber value=&quot;000000000000000&quot;&gt; Certificate number</div><div class="line">  &lt;input type=hidden name=v_idname value=&quot;none&quot;&gt; Customer name</div><div class="line">  &lt;input type=hidden name=v_idcountry value=&quot;000&quot;&gt; Customer country</div><div class="line">  &lt;input type=hidden name=v_idaddress value=&quot;none&quot;&gt; Customer&apos;s address</div><div class="line">  &lt;input type=hidden name=v_userref value=&quot;a001&quot;&gt; Customer unique identifier</div><div class="line">  &lt;input type=hidden name=v_md5info value=&quot;1630dc083d70a1e8af60f49c143a7b95&quot;&gt;Order Digital Fingerprint</div><div class="line">  &lt;imgsrc=&quot;../path/../PayEase.gif&quot; width=&quot;150&quot; height=&quot;30&quot; onClick=&quot;document.form.submit();&gt;&quot;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="2-The-return-interface-for-order-payout-results-page"><a href="#2-The-return-interface-for-order-payout-results-page" class="headerlink" title="2.The return interface for order payout results page"></a>2.The return interface for order payout results page</h3><h4 id="1-Interface-description："><a href="#1-Interface-description：" class="headerlink" title="1) Interface description："></a>1) Interface description：</h4><ul>
+<li>PayEase to Merchant</li>
+<li>This is a frontground interface means that customers can see the result in the pager.</li>
+<li>After the payment is complete, PayEase returns the order payment result data through the <figure class="highlight plain"><figcaption><span>setted by the merchant.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 2) Request Param:</div><div class="line"></div><div class="line">| Parameter Name |           Description           |  Data Type  | Details                                  |</div><div class="line">| -------------- | :-----------------------------: | :---------: | :--------------------------------------- |</div><div class="line">| v_url          | url of recieving payment result |             | Same as v_url of No1 api                 |</div><div class="line">| v_oid          |            Order ID             | string(64)  | Same as v_oid of No1 api                 |</div><div class="line">| [v_pmode]()    |          Payment mode           | string(40)  | See the The Description for MD5.         |</div><div class="line">| v_pstatus      |         Payment status          | Integer(2)  | 1----&gt; submitted\| 20----&gt; payment successful \| 30----&gt; Payment failed |</div><div class="line">| v_pstring      |       Payment result msg        | string(200) | Payment result msg                       |</div><div class="line">| v_md5info      |    Order Digital Fingerprint    | string(32)  | ```v_md5info=char* hmac_md5(char* text, char* key)```;  ```v_md5info``` verify four parameters, the order of the stitching string: ```v_oid```, ```v_pstatus```, ```v_pstring``` and ```v_pmode``` |</div><div class="line">| v_amount       |      The amount of orders       | Decimal(16) | The actual amount paid for the order.    |</div><div class="line">| v_moneytype    |      Payment currency type      | Integer(2)  | The currency actually paid for the order. |</div><div class="line">| v_md5money     |       Digital Fingerprint       | string(32)  | ```v_md5money=char* hmac_md5(char* text,char* key)```; ```v_md5money``` verify four parameters, the order of the stitching string: ```v_md5money```, ```v_moneytype``` |</div><div class="line">| v_sign         |      Mall Data fingerprint      | string(256) | The data that participates in the signature: ```v_oid+v_pstatus+v_amount+v_moneytype``` |</div><div class="line"></div><div class="line">**Note:**  </div><div class="line"></div><div class="line">Verify the mall data signature: (```Public1024.key```  is the public key for the mall) </div><div class="line"></div><div class="line">1. Verify the signature for asp</div><div class="line"></div><div class="line">```asp</div><div class="line">set com=server.CreateObject(&quot;RSACOM.RSAMD5.1&quot;)</div><div class="line">source=v_oid&amp;v_pstatus&amp;v_amount&amp;v_moneytypeverifyStatus=com.PublicVerifyMD5(&quot;D:\Publ</div><div class="line">ic1024.key&quot;,v_sign,source,len(source))</div><div class="line">(verifyStatus：0 Successful validation)</div></pre></td></tr></table></figure></li>
+</ul>
+<ol>
+<li>Verify the signature for jsp</li>
+</ol>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RSA_MD5 myRSA=<span class="keyword">new</span> RSA_MD5();</div><div class="line">String source=v_oid + v_pstatus + v_amount + v_moneytype;</div><div class="line">intverifyStatus=myRSA.PublicVerifyMD5(<span class="string">"D:\Public1024.key"</span>,v_sign,source);</div><div class="line">(verifyStatus：<span class="number">0</span> Successful validation)</div></pre></td></tr></table></figure>
+<h4 id="3-Verify-the-parameter-description"><a href="#3-Verify-the-parameter-description" class="headerlink" title="3) Verify the parameter description"></a>3) Verify the parameter description</h4><p>The PayEase platform order page return interface has 9 parameters. Where <figure class="highlight plain"><figcaption><span>v_pstatus```, ```v_pstring```, ```v_pmode```, ```v_amount```, ```v_moneytype``` six parameters are the order-related messages.  ```v_md5info```, ```v_md5money```, and ```v_sign``` are additional validation messages.Among them, ```v_sign``` parameter is used for the first letter of the latest payment platform for asymmetric security authentication method of fingerprint results. In order to maintain Capitel payment platform compatibility, so the original for symmetric authentication method to retain the original two authentication parameters: ```v_md5info``` and ```v_md5money```, so that the original businesses do not have to make any changes, ```v_md5money``` participate in the validation parameters are not included Chinese, if encountered in the verification of the Chinese coding problem, you can verify the fingerprint to solve. Capitel Payment Platform recommends that new entrants be placed in an asymmetric security authentication mode. This authentication method also applies to the back of the CAPEX payment order background return interface, just pay attention to participate in the validation parameters are different. Especially in this note, will not repeat them later. As the use of asymmetric security authentication methods need to install the certificate file and other operations, if the virtual host users can not be achieved in view of the conditions, you can also use the original md5 authentication.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 4) Examples</div><div class="line"></div><div class="line">```html</div><div class="line">&lt;form method=get action=&quot;*****&quot; target=_self&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_oid&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_pstatus&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_pstring&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_pmode&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_md5info&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_amount&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_moneytype&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_md5money&quot; value=&quot;&quot;&gt;</div><div class="line">  &lt;input type=&quot;hidden&quot; name=&quot;v_sign &quot; value=&quot;&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="3-The-order-payment-result-is-returned-in-the-background-interface"><a href="#3-The-order-payment-result-is-returned-in-the-background-interface" class="headerlink" title="3.The order payment result is returned in the background interface"></a>3.The order payment result is returned in the background interface</h3><h4 id="1-Interface-description：-1"><a href="#1-Interface-description：-1" class="headerlink" title="1) Interface description："></a>1) Interface description：</h4><ul>
+<li>PayEase to Merchant</li>
+<li>The PayEase platform sends the payment result of the order to the merchant, and the merchant returns the receiving condition.</li>
+</ul>
+<p><strong>Note:</strong><br>This interface and the subsequent transfer result return interface are to be provided by the merchant when the merchant is settled in. In the “Order Payment Return Interface” column of the initial order, or in the form of company name, merchant number, contact, URL of both interfaces Sent to the platform of the customer service mailbox.</p>
+<ul>
+<li>The PayEase platform will return the payment result for one or more orders at a time, and will be sent as an order group when it returns to multiple order results: The PayEase platform sends the payment results to the merchant in real time for each order. If an order has not been successfully sent (if there is a network outage or the order md5 is incorrect) but the payment has been successfully made, the order will be sent the next time the order is sent. If the delivery is not successful again, Repeat the same day. Orders for failed payments are sent only once.</li>
+</ul>
+<h4 id="2-Request-Param"><a href="#2-Request-Param" class="headerlink" title="2) Request Param:"></a>2) Request Param:</h4><table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Data Type</th>
+<th style="text-align:left">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v_count</td>
+<td style="text-align:center">number of orders</td>
+<td style="text-align:center">Integer(1)</td>
+<td style="text-align:left">The number of orders sent this times. (min: 1 , max: 4)</td>
+</tr>
+<tr>
+<td>v_oid</td>
+<td style="text-align:center">A set of order IDs</td>
+<td style="text-align:center">string(300)</td>
+<td style="text-align:left">Define the order number definition in the interface with the merchant submitting the pending order.</td>
+</tr>
+<tr>
+<td>v_pmode</td>
+<td style="text-align:center">Payment mode</td>
+<td style="text-align:center">string(170)</td>
+<td style="text-align:left">See the Other details in the end of document.</td>
+</tr>
+<tr>
+<td>v_pstatus</td>
+<td style="text-align:center">Payment status</td>
+<td style="text-align:center">string(20)</td>
+<td style="text-align:left">0—-&gt; To be processed \</td>
+<td>1—-&gt;Payment is completed \</td>
+<td>2—-&gt;Payment declined</td>
+</tr>
+<tr>
+<td>v_pstring</td>
+<td style="text-align:center">Result msg</td>
+<td style="text-align:center">string(800)</td>
+<td style="text-align:left">Payment is completed \</td>
+<td>The reason for the failure</td>
+</tr>
+<tr>
+<td>v_amount</td>
+<td style="text-align:center">The amount of orders</td>
+<td style="text-align:center">string(60)</td>
+<td style="text-align:left">The actual amount paid for the order.</td>
+</tr>
+<tr>
+<td>v_moneytype</td>
+<td style="text-align:center">Payment currency type</td>
+<td style="text-align:center">string(20)</td>
+<td style="text-align:left">The currency actually paid for the order.</td>
+</tr>
+<tr>
+<td>v_mac</td>
+<td style="text-align:center">Digital signature</td>
+<td style="text-align:center">string(32)</td>
+<td style="text-align:left">See the Other details in the end of document.</td>
+</tr>
+<tr>
+<td>v_md5money</td>
+<td style="text-align:center">Digital Fingerprint</td>
+<td style="text-align:center">string(32)</td>
+<td style="text-align:left">See the Other details in the end of document.</td>
+</tr>
+<tr>
+<td><a href="">v_sign</a></td>
+<td style="text-align:center">Mall Data signature</td>
+<td style="text-align:center">string(256)</td>
+<td style="text-align:left">See the Other details in the end of document.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong></p>
+<p>Verify the Mall Data signature <figure class="highlight plain"><figcaption><span>: ( ```Public1024.key``` is the public key of mall)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">1. Verify the signature for asp</div><div class="line"></div><div class="line">```asp</div><div class="line">set com=server.CreateObject(&quot;RSACOM.RSAMD5.1&quot;)</div><div class="line">source=v_oid&amp;v_pstatus&amp;v_amount&amp;v_moneytypeverifyStatus=com.PublicVerifyMD5(&quot;D:\Publ</div><div class="line">ic1024.key&quot;,v_sign,source,len(source))</div><div class="line">(verifyStatus：0 Successful validation)</div></pre></td></tr></table></figure></p>
+<ol>
+<li>Verify the signature for jsp</li>
+</ol>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RSA_MD5 myRSA=<span class="keyword">new</span> RSA_MD5();</div><div class="line">String source=v_oid + v_pstatus + v_amount + v_moneytype;</div><div class="line">intverifyStatus=myRSA.PublicVerifyMD5(<span class="string">"D:\Public1024.key"</span>,v_sign,source);</div><div class="line">(verifyStatus：<span class="number">0</span> Successful validation)</div></pre></td></tr></table></figure>
+<h4 id="3-Merchant’s-Returned-Msg"><a href="#3-Merchant’s-Returned-Msg" class="headerlink" title="3)Merchant’s Returned Msg"></a>3)Merchant’s Returned Msg</h4><ul>
+<li>When the merchant receives the above message, the return message is defined as follows:</li>
+</ul>
+<blockquote>
+<figure class="highlight plain"><figcaption><span>means the payment result information is successfully received.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&gt;</div><div class="line">&gt; ```error``` means that an error occurred in the received message.</div><div class="line"></div><div class="line">#### 4) Example (ASP) </div><div class="line"></div><div class="line">```asp</div><div class="line">&lt;%&apos;获取参数</div><div class="line">v_count=request(&quot;v_count&quot;)</div><div class="line">v_oid=request(&quot;v_oid&quot;)</div><div class="line">v_pmode=request(&quot;v_pmode&quot;)</div><div class="line">v_pstatus=request(&quot;v_pstatus&quot;)</div><div class="line">v_pstring=request(&quot;v_pstring&quot;)</div><div class="line">v_mac=request(&quot;v_mac&quot;)</div><div class="line">v_sign=request(“v_sign”)</div><div class="line">&apos;解析参数</div><div class="line">a_oid=split(v_oid,&quot;|_|&quot;)</div><div class="line">a_pmode=split(v_pmode,&quot;|_|&quot;)</div><div class="line">a_pstatus=split(v_pstatus,&quot;|_|&quot;)</div><div class="line">a_pstring=split(v_pstring,&quot;|_|&quot;)</div><div class="line">&apos;md5 校验</div><div class="line">dim md,fff</div><div class="line">set md=server.CreateObject (&quot;md5_VB.md5class&quot;)</div><div class="line">fff=md.hmac(v_oid&amp;v_pmode&amp;v_pstatus&amp;v_pstring&amp;v_count,&quot;test&quot;)</div><div class="line">&apos;按md5 校验情况输出结果</div><div class="line">if fff&lt;&gt;v_mac then</div><div class="line">response.write &quot;error&quot;</div><div class="line">else</div><div class="line">response.write &quot;received&quot;</div><div class="line">或response.write&quot;sent&quot;，依据商品物流特征决定。</div><div class="line">操作数据库（略）</div><div class="line">…</div><div class="line">…</div><div class="line">end if</div><div class="line">%&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Description-of-the-security-verification-algorithm"><a href="#Description-of-the-security-verification-algorithm" class="headerlink" title="Description of the security verification algorithm"></a>Description of the security verification algorithm</h2><p>The MD5 algorithm is used to math the raw information for verification of data integrity. (Note: The algorithm from PayEase provide asp, standard c, java three versions).</p>
+<figure class="highlight plain"><figcaption><span>This seven parameter values into a string (char type, do not change the order), and we both agreed with the key as an entry parameter, the specific call function as follows:</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Md5 algorithm library with key</div><div class="line"></div><div class="line">```md5lib.h``` is an externally callable library.</div><div class="line"></div><div class="line"></div><div class="line">## Other details:</div><div class="line"></div><div class="line">#### 1. Payment currency(v_moneytype):</div><div class="line"></div><div class="line">* 0----&gt;CNY</div><div class="line">* 1 ----&gt;USD</div><div class="line">* 2----&gt;EUR </div><div class="line">* 3----&gt;GBP</div><div class="line">* 4----&gt;JPY</div><div class="line">* 5----&gt;Won</div><div class="line">* 6----&gt;AUD</div><div class="line">* 7----&gt;SUR</div><div class="line">* 8----&gt;CHF</div><div class="line">* 9----&gt;HKD</div><div class="line">* 10----&gt;SGD</div><div class="line">* 11----&gt;MOP</div><div class="line"></div><div class="line">&gt; China credit card and online banking payment only supports CNY</div><div class="line"></div><div class="line">#### 2. Type of certificate (v_idtype):</div><div class="line"></div><div class="line">The type of certificate, in encoded format:</div><div class="line"></div><div class="line">* 01----&gt;ID card</div><div class="line">* 02----&gt;Passport</div><div class="line">* 03----&gt;Military card</div><div class="line">* 04----&gt;MTP</div><div class="line">* 05---&gt;HongKong-Macaulaissez-passer</div><div class="line"></div><div class="line">&gt;  If the merchant does not collect this parameter, please pass 00.</div><div class="line"></div><div class="line">#### 3. Payment mode (v_pmode):</div><div class="line"></div><div class="line">| Code | Payment Mode | In English                               |</div><div class="line">| ---- | ------------ | ---------------------------------------- |</div><div class="line">| 1    | 中国银行信用卡      | Credit Card of Bank of China             |</div><div class="line">| 130  | 中国建设银行信用卡    | Credit Card of China Construction Bank   |</div><div class="line">| 139  | 中国农业银行信用卡    | Credit Card of Agricultural Bank Of China |</div><div class="line">| 3    | 招商银行         | China Merchants Bank                     |</div><div class="line">| 4    | 中国建设银行       | China Construction Bank                  |</div><div class="line">| 9    | 中国工商银行       | Industry and Commercial Bank of China    |</div><div class="line">| 14   | 平安银行         | Pingan Bank                              |</div><div class="line">| 28   | 民生银行         | China Minsheng Bank                      |</div><div class="line">| 33   | 兴业银行         | China Industrial Bank                    |</div><div class="line">| 43   | 中国农业银行       | Agricultural Bank Of China               |</div><div class="line">| 44   | 广发银行         | Guangdong Development Bank               |</div><div class="line">| 50   | 北京银行         | Beijing City Commercial Bank             |</div><div class="line">| 59   | 中国邮政银行       | Postal Savings Bank of China             |</div><div class="line">| 60   | 华夏银行         | Huaxia Bank                              |</div><div class="line">| 67   | 交通银行         | Bank Of Communacations                   |</div><div class="line">| 69   | 浦发银行         | Shanghai Pudong Development Bank         |</div><div class="line">| 74   | 光大银行         | China Everbright Bank                    |</div><div class="line">| 75   | 北京农商银行       | Beijing Rural Commercial Bank            |</div><div class="line">| 83   | 渤海银行         | China Bohai Bank                         |</div><div class="line">| 84   | 中信银行         | CITIC Bank                               |</div><div class="line">| 85   | 中国银行         | Bank of China                            |</div><div class="line">| 110  | 中信银行信用卡      | China CITIC Bank Credit Card             |</div><div class="line">| 121  | 上海银行         | Bank of Shanghai                         |</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### 4. Digital signature(v_mac):</div><div class="line"></div><div class="line">Purpose: Prevent tampering information</div></pre></td></tr></table></figure>
+<p>v_mac=hmac_md5(text , key)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* Where ```text``` is the result of the values of the items in the form spelled in the following order。</div></pre></td></tr></table></figure></p>
+<p>v_oid+v_pmode+v_pstatus+v_pstring+v_count<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* ```key```  is a string agreed by both parties</div><div class="line">* eg: Send two orders at a time</div></pre></td></tr></table></figure></p>
+<p>20001124-888-test002|<em>|20001124-888-test003招商银行一网通|</em>|招商银行一网通3|<em>|1 支付被拒绝|</em>|支付完成2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 5. Digital Fingerprint (v_md5money)</div><div class="line"></div><div class="line">* Purpose: Prevent tampering information</div></pre></td></tr></table></figure></p>
+<p>v_md5money=hmac_md5(text ,key)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* Where ```text``` is the result of the values of the items in the form spelled in the following order。</div></pre></td></tr></table></figure></p>
+<p>v_amount+v_moneytype<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* ```key```  is a string agreed by both parties</div><div class="line"></div><div class="line">#### 6. Mall Data signature(v_sign) </div><div class="line"></div><div class="line">* The data that participates in the signature</div></pre></td></tr></table></figure></p>
+<p>v_oid+v_pstatus+v_amount+v_moneytype+v_count<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Note: For several orders, Take v_oid field as an example, and v_oid1 represents the first order, v_oid2 represents the second one.With each other to &quot;|_|&quot; segmentation.</div></pre></td></tr></table></figure></p>
+<p>v_oid=v<em>oid1|</em>|v<em>oid2|</em>|v<em>oid3|</em>|v<em>oid4|</em>|…<br>```</p>
+<h4 id="7-A-list-of-common-errors-that-occur-when-a-request-commits"><a href="#7-A-list-of-common-errors-that-occur-when-a-request-commits" class="headerlink" title="7. A list of common errors that occur when a request commits"></a>7. A list of common errors that occur when a request commits</h4><table>
+<thead>
+<tr>
+<th>No</th>
+<th style="text-align:left">Reason</th>
+<th>Error Msg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td style="text-align:left">There are “,” in parameter v_amount.</td>
+<td>Incorrect information format</td>
+</tr>
+<tr>
+<td>02</td>
+<td style="text-align:left">The time in the parameters v_ymd and v_oid is not consistent.</td>
+<td>Incorrect information format</td>
+</tr>
+<tr>
+<td>03</td>
+<td style="text-align:left">The v_moneytype parameter has a value other than 0 and 1.</td>
+<td>Incorrect information format</td>
+</tr>
+<tr>
+<td>04</td>
+<td style="text-align:left">The date in v_ymd and v_oid is not set in the yyyymmdd format.</td>
+<td>Incorrect information format</td>
+</tr>
+<tr>
+<td>05</td>
+<td style="text-align:left">The merchant ID in v_mid and v_oid do not match.</td>
+<td>Incorrect information format</td>
+</tr>
+<tr>
+<td>06</td>
+<td style="text-align:left">Order number (v_oid) is not complete, for example: only the serial number transmission and so on.</td>
+<td>Incorrect information format</td>
+</tr>
+<tr>
+<td>07</td>
+<td style="text-align:left">The v_md5info value does not match the PayEase platform.</td>
+<td>Fingerprint invalid</td>
+</tr>
+<tr>
+<td>08</td>
+<td style="text-align:left">Parameters contain traditional characters or uncommon words.</td>
+<td>Fingerprint invalid</td>
+</tr>
+<tr>
+<td>09</td>
+<td style="text-align:left">Merchant ID (v_mid) has not been activation.</td>
+<td>The service for this merchant is unavailable</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:left">The parameter v_moneytype is set to 1 when the wild card is not activation.</td>
+<td>Invalid operation</td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align:left">This order has been submitted,and this submission changed some parameters of the last .</td>
+<td>Order is in process,can not modify order info</td>
+</tr>
+<tr>
+<td>12</td>
+<td style="text-align:left">The same order number, re-use!</td>
+<td>Order is in process,can not run payment operation</td>
+</tr>
+<tr>
+<td>13</td>
+<td style="text-align:left">The total order amount (v_amount) exceeds the specified amount.</td>
+<td>Order money is too large</td>
+</tr>
+<tr>
+<td>14</td>
+<td style="text-align:left">Unsupported location.</td>
+<td>Sorry, this payment transactionwas limited within your areascurrently</td>
+</tr>
+<tr>
+<td>15</td>
+<td style="text-align:left">Exceeds the trading limit.</td>
+<td>It has been exceeded thepayment limitation, pleasecontact the website</td>
+</tr>
+</tbody>
+</table>
+<p>Note:<br>v_md5info value calculation results and Capitel payment platform inconsistencies may be due to:<br>1, spell string order error (see the correct order of the first part of the technical description).<br>2, the use of key inconsistencies (please use and Capitel payment platform agreement key).<br>3, some parameters may contain spaces, the value is not removed (Please ensure that the parameter values involved in the string with the form given in the<br>Values are consistent).</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/11/18/002-PayEaze API Document V4.3/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"letian"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
